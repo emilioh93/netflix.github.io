@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f412a4f89a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- insertar navbar -->
+    </header>
+    <main class="mt-5 container">
+        <section class="d-flex justify-content-center" >
+            <form action="" class="w-50 fondoContacto">
+                <div class="mb-3">
+                    <label class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Juan Perez">
+                    <div class="invalid-feedback">
+                        Campo invalido
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail...">
+                    <div class="invalid-feedback">
+                        Campo invalido
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Consulta</label>
+                    <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta"></textarea>
+                    <div class="invalid-feedback">
+                        Campo invalido
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" id="terminos" class="form-check-input">
+                        <label class="form-check-label">Estas de acuerdo con los terminos y condiciones</label>
+                        <div class="invalid-feedback">
+                            Debe aceptar los terminos y condiciones
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+      <!-- insertar footer -->
+    </footer>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
