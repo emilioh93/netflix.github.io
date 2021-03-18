@@ -27,22 +27,48 @@ flechaIzquierda.addEventListener('click', () => {
 });
 
 // ? ----- ----- Paginación ----- -----
-const numeroPaginas = Math.ceil(peliculas.length / 5);
-for (let i = 0; i < numeroPaginas; i++) {
-    const indicador = document.createElement('button');
+if (navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)) {
+    const numeroPaginas = Math.ceil(peliculas.length / 3);
+    for (let i = 0; i < numeroPaginas; i++) {
+        const indicador = document.createElement('button');
 
-    if (i === 0) {
-        indicador.classList.add('activo');
+        if (i === 0) {
+            indicador.classList.add('activo');
+        }
+
+        document.querySelector('.indicadores').appendChild(indicador);
+        indicador.addEventListener('click', (e) => {
+            fila.scrollLeft = i * fila.offsetWidth;
+
+            document.querySelector('.indicadores .activo').classList.remove('activo');
+            e.target.classList.add('activo');
+        });
     }
+} else {
+    const numeroPaginas = Math.ceil(peliculas.length / 5);
+    for (let i = 0; i < numeroPaginas; i++) {
+        const indicador = document.createElement('button');
 
-    document.querySelector('.indicadores').appendChild(indicador);
-    indicador.addEventListener('click', (e) => {
-        fila.scrollLeft = i * fila.offsetWidth;
+        if (i === 0) {
+            indicador.classList.add('activo');
+        }
 
-        document.querySelector('.indicadores .activo').classList.remove('activo');
-        e.target.classList.add('activo');
-    });
+        document.querySelector('.indicadores').appendChild(indicador);
+        indicador.addEventListener('click', (e) => {
+            fila.scrollLeft = i * fila.offsetWidth;
+
+            document.querySelector('.indicadores .activo').classList.remove('activo');
+            e.target.classList.add('activo');
+        });
+    }
 }
+
 
 // ? ----- ----- Hover ----- -----
 peliculas.forEach((pelicula) => {
