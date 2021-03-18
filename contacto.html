@@ -18,43 +18,70 @@
       <!-- insertar navbar -->
     </header>
     <main class="mt-5 container">
-        <section class="d-flex justify-content-center" >
-            <form action="" class="w-50 fondoContacto">
+      <section class="row">
+        <div class="col-6 d-flex justify-content-center">
+          <div class="card shadow">
+            <div class="card-header bg-danger">
+              <h5 class="card-title">Formulario de Contacto</h5>
+            </div>
+            <div class="card-body">
+              <form action="" class="">
                 <div class="mb-3">
-                    <label class="form-label">Nombre y Apellido</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Juan Perez">
-                    <div class="invalid-feedback">
-                        Campo invalido
-                    </div>
+                  <label class="form-label">Nombre y Apellido</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Juan Perez"
+                  />
+                  <div class="invalid-feedback">Campo invalido</div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail...">
-                    <div class="invalid-feedback">
-                        Campo invalido
-                    </div>
+                  <label class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="JuanPerez@gmail..."
+                  />
+                  <div class="invalid-feedback">Campo invalido</div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Consulta</label>
-                    <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta"></textarea>
-                    <div class="invalid-feedback">
-                        Campo invalido
-                    </div>
+                  <label class="form-label">Consulta</label>
+                  <textarea
+                    name=""
+                    id="Consulta"
+                    class="form-control"
+                    placeholder="Ingrese su consulta"
+                  ></textarea>
+                  <div class="invalid-feedback">Campo invalido</div>
                 </div>
                 <div class="mb-3">
-                    <div class="form-check">
-                        <input type="checkbox" id="terminos" class="form-check-input">
-                        <label class="form-check-label">Estas de acuerdo con los terminos y condiciones</label>
-                        <div class="invalid-feedback">
-                            Debe aceptar los terminos y condiciones
-                        </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="terminos"
+                      class="form-check-input"
+                    />
+                    <label class="form-check-label"
+                      >Estas de acuerdo con los terminos y condiciones</label
+                    >
+                    <div class="invalid-feedback">
+                      Debe aceptar los terminos y condiciones
                     </div>
+                  </div>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="submit" class="btn btn-danger">Enviar</button>
                 </div>
-            </form>
-        </section>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+            <img src="/img/cine 1.png" alt="" class="borde">
+        </div>
+      </section>
     </main>
     <footer>
       <!-- insertar footer -->
