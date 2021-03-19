@@ -79,3 +79,14 @@ footer a:hover {
 .login .card .card-link:hover {
     color: #fff;
 }
+
+.borde {
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 5px;
+}
+
+
+/* #imagenContacto{
+    width: max-content;
+
+} */
