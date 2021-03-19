@@ -1,3 +1,81 @@
 body {
     background-color: black;
+    margin-top: 70px;
+}
+
+
+/* Estilos navbar y footer */
+
+header .navbar {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 10%, rgba(0, 0, 0, 0));
+}
+
+header .navbar-brand img {
+    max-width: 92px;
+    width: 100%;
+}
+
+
+/* header login*/
+
+header .logo img {
+    max-width: 150px;
+    width: 100%;
+}
+
+footer a {
+    color: #6c757d;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.logofooter img {
+    max-width: 92px;
+    width: 100%;
+}
+
+
+/* fondo body login*/
+
+.login {
+    background-image: url(../img/fondologin.jpg);
+    margin-top: 0px;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, .7);
+    height: 100vh;
+}
+
+.login .card {
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    width: 30rem;
+    min-height: 500px;
+}
+
+.login .card-body {
+    padding: 65px;
+}
+
+.btn-outline-danger:hover,
+.btn-danger {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+.btn-outline-danger {
+    color: #e50914;
+    border-color: #e50914;
+}
+
+.login .card .card-link {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.login .card .card-link:hover {
+    color: #fff;
 }
