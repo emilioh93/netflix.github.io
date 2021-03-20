@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&family=Bungee+Outline&family=Domine:wght@500&family=Jolly+Lodger&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/style.css">
@@ -43,12 +44,127 @@
             </div>
         </nav>
     </header>
+    <main>
+        <!-- portada -->
+
+        <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselIndicators"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button> 
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <img src="img\gambitoDeDama1.jpg" class="d-block w-100 first-slide" alt="..." />
+                <div class="container">
+                <div id="slider1" class="carousel-caption d-flex align-items-start flex-column" style="height: 60%;">
+                  <h2  class="mb-auto p-2" id="GambitodeDama">Gambito de dama</h2>
+                  <p id="descripcion">Kentucky, años 50. En el orfanato, una chica descubre que posee un talento extraordinario para el ajedrez mientras intenta superar una adicción.</p>
+                  <div >
+                     <a href="#" class="btn btn-danger disabled " role="button"> <i class="fas fa-play"></i> reproducir</a>
+                    <a href="#" class="btn btn-secondary  disabled " role="button"> <i class="fas fa-info-circle"></i> Informacion</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img\gambitoddama2.jpg" class="d-block w-100 second-slide" alt="..." />
+                <div class="container">
+                <div class="carousel-caption d-flex align-items-start flex-column" style="height: 50%;">
+                  <h2 class="mb-auto p-2" id="GambitodeDama">Gambito de dama</h2>
+                  <div >
+                  <a href="#" class="btn btn-danger disabled " role="button"> <i class="fas fa-play"></i> reproducir</a>
+                  <a href="#" class="btn btn-secondary  disabled " role="button"> <i class="fas fa-info-circle"></i> Informacion</a>
+                </div>
+                </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img\riverdale.jpg" class="d-block w-100 third-slide" alt="..." />
+                <div class="container">
+                <div class="carousel-caption d-flex align-items-start flex-column" style="height: 82%;">
+                    <h2 class="mb-auto p-2" id="riverdale" >Riverdale</h2>
+                 
+                    <p id="descripcion">La vida tranquila y convencional de los estudiantes de Riverdale da un giro cuando el alumno más popular del instituto aparece asesinado.</p>
+                    <div>
+                    <a href="#" class="btn btn-danger disabled " role="button"> <i class="fas fa-play"></i> reproducir</a>
+                    <a href="#" class="btn btn-secondary disabled " role="button"> <i class="fas fa-info-circle"></i> Informacion</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img\riverdale2.jpg" class="d-block w-100 " alt="..." />
+                <div class="container">
+                <div class="carousel-caption d-flex align-items-start flex-column" style="height: 30%;">
+                  <h2 class="mb-auto p-2" id="riverdale">Riverdale</h2>
+                  <div >
+                  <a href="#" class="btn btn-danger disabled " role="button"> <i class="fas fa-play"></i> reproducir</a>
+                  <a href="#" class="btn btn-secondary disabled " role="button" > <i class="fas fa-info-circle"> </i> Informacion</a>
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img\sabrina.jpg" class="d-block w-100" alt="..." />
+                <div class="container">
+                    <div class="carousel-caption d-flex align-items-start flex-column" style="height: 40%;">
+                      <h2 class="mb-auto p-2" id="sabrina">Las escalofriantes aventuras de sabrina</h2>
+                    
+                      <p id="descripcion">La magia y las diabluras se dan la mano cuando Sabrina, navega por dos mundos: el de los mortales y el de su familia, la Iglesia de la Noche.</p>
+                      <div >
+                    <a href="#" class="btn btn-danger disabled " role="button"> <i class="fas fa-play"></i> reproducir</a>
+                    <a href="#" class="btn btn-secondary " disabled data-bs-toggle="modal" data-bs-target="#SabrinaModal" role="button"> <i class="fas fa-info-circle"></i> Informacion</a>
+                  </div>
+                 </div>
+               </div>
+              </div>
+            </div>
+             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button> 
+           </div>
+      
+
     <div class="peliculas-recomendadas contenedor">
         <div class="contenedor-titulo-controles">
             <h3>Películas Recomendadas</h3>
             <div class="indicadores"></div>
         </div>
-
         <div class="contenedor-principal">
             <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
 
@@ -140,6 +256,7 @@
             <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
         </div>
     </div>
+</main>
     <footer class="text-secondary py-5 text-center">
         <section class="container ">
             <article class="row flex-md-row-reverse">
