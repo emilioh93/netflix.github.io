@@ -91,34 +91,37 @@ footer a:hover {
 
 } */
 
+
 /* estilos portada */
 
-#riverdale{
+#riverdale {
     font-family: 'Bungee Outline', cursive;
-    font-size:6rem;
-    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #34d5fd 0px 0px 20px, #34d5fd 0px 0px 30px, #34d5fd 0px 0px 40px, #34d5fd 0px 0px 50px, #34d5fd 0px 0px 75px, 11px 2px 2px rgba(33,192,206,0);
+    font-size: 6rem;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #34d5fd 0px 0px 20px, #34d5fd 0px 0px 30px, #34d5fd 0px 0px 40px, #34d5fd 0px 0px 50px, #34d5fd 0px 0px 75px, 11px 2px 2px rgba(33, 192, 206, 0);
 }
 
-#GambitodeDama{
+#GambitodeDama {
     font-family: 'Domine', serif;
     font-size: 5rem;
-    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5)
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5)
 }
 
-#sabrina{
+#sabrina {
     font-family: 'Jolly Lodger', cursive;
     font-size: 5rem;
 }
 
-#descripcion{
+#descripcion {
     text-shadow: 1px 1px 5px #030303;
     font-size: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-@media only screen and (max-width: 767.98px){
-
-#slider1{
-    margin-top: -10px;
-}
+@media (max-width: 767.98px) {
+    #slider1 h2 {
+        font-size: medium;
+    }
+    #slider1 p {
+        display: none;
+    }
 }
