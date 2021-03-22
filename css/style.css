@@ -120,7 +120,8 @@ footer a:hover {
 /* Pagina de contacto */
 
 .fondoContacto{
-  background-image: url(/img/fondologin.jpg);
+  background-image: url(/img/contacus\ 1.jpg);
+  object-fit: cover;
 }
 
 .transparente{
