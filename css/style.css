@@ -117,6 +117,19 @@ footer a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/* Pagina de contacto */
+
+.fondoContacto{
+  background-image: url(/img/fondologin.jpg);
+}
+
+.transparente{
+  opacity: 0.9;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  }
+
 @media (max-width: 767.98px) {
     #slider1 h2 {
         font-size: medium;
