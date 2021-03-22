@@ -129,8 +129,22 @@ footer a:hover {
   -moz-opacity: 0.8;
   filter: alpha(opacity=80);
   -khtml-opacity: 0.8;
-  }
+}
 
+/* Pagina de admin */
+
+.fondoAdm{
+    background-color: white;
+}
+
+/* Pagina de Pelicula */
+
+.fondoPelicula{
+    background-image: url(/img/fondologin.jpg);
+    width: 100%;
+
+}
+  
 @media (max-width: 767.98px) {
     #slider1 h2 {
         font-size: medium;
