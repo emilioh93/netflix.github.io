@@ -140,9 +140,21 @@ footer a:hover {
 /* Pagina de Pelicula */
 
 .fondoPelicula{
-    background-image: url(/img/fondologin.jpg);
+    background-image: url(/img/fondopelicula.jpg);
     width: 100%;
+    object-fit: contain;
+    
+}
 
+.imagenPelicula{
+    object-fit: contain;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.cardDetalles{
+    border-radius: 35px;
+    box-shadow: 0px 0px 20px grey;
 }
   
 @media (max-width: 767.98px) {
@@ -151,5 +163,9 @@ footer a:hover {
     }
     #slider1 p {
         display: none;
+    }
+    
+    .textoResponsive {
+        font-size: small;
     }
 }
