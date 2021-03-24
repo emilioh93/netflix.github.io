@@ -117,54 +117,14 @@ footer a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Pagina de contacto */
-
-.fondoContacto{
-  background-image: url(/img/contacus\ 1.jpg);
-  object-fit: cover;
-}
-
-.transparente{
-  opacity: 0.9;
-  -moz-opacity: 0.8;
-  filter: alpha(opacity=80);
-  -khtml-opacity: 0.8;
-}
-
-/* Pagina de admin */
-
-.fondoAdm{
-    background-color: white;
-}
-
-/* Pagina de Pelicula */
-
-.fondoPelicula{
-    background-image: url(/img/fondopelicula.jpg);
-    width: 100%;
-    object-fit: contain;
-    
-}
-
-.imagenPelicula{
-    object-fit: contain;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-}
-
-.cardDetalles{
-    border-radius: 35px;
-    box-shadow: 0px 0px 20px grey;
-}
-  
 @media (max-width: 767.98px) {
     #slider1 h2 {
         font-size: medium;
     }
-    #slider1 p {
+    #description p {
         display: none;
     }
-    
+
     .textoResponsive {
         font-size: small;
     }
