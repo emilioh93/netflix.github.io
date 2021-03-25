@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Rollflix - Registro</title>
 </head>
@@ -20,22 +19,10 @@
             </div>
             <h4 class="card-title mb-5 text-center">¡Unos pasos más y listo! Tampoco nos gustan los trámites.</h4>
             <form class="mb-5">
-                <div class="d-flex mb-3">
-                    <div class="me-auto">
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido">
-                    </div>
-                    <div>
-                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
-                    </div>
-                </div>
-                <div class="d-flex mb-3">
-                    <div class="me-auto">
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="">
-                        <input type="password" class="form-control" id="clave" placeholder="Agregá una contraseña">
-                    </div>
-                </div>
+                <input type="text" class="form-control mb-3 inputRegistro" id="nombre" placeholder="Nombre y Apellido">
+                <input type="tel" class="form-control mb-3 inputRegistro" id="telefono" placeholder="Teléfono">
+                <input type="email" class="form-control mb-3 inputRegistro" id="email" placeholder="Email">
+                <input type="password" class="form-control mb-3 inputRegistro" id="clave" placeholder="Agregá una contraseña">
                 <div class="my-5">
                     <h5 class="card-title mb-3">Seleccioná el plan ideal para vos</h5>
                     <ul>
@@ -85,7 +72,7 @@
                     <p>Tu membresía comienza en cuanto configures el pago.</p>
                     <p><strong>Sin compromisos. Cancelá online cuando quieras.</strong></p>
                     <div class="d-flex justify-content-center">
-                        <select class="form-select w-50" name="pago" id="pago">
+                        <select class="form-select selectSm" name="pago" id="pago">
                             <option selected>Seleccioná un método de pago</option>
                             <option value="credito">Tarjeta de crédito</option>
                             <option value="debito">Tarjeta de débito</option>
@@ -106,7 +93,6 @@
     </main>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/carousel.js"></script>
 </body>
 
 </html>

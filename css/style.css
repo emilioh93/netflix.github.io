@@ -98,6 +98,26 @@ footer a:hover {
     color: #fff;
 }
 
+.inputRegistro {
+    background-color: #03030300;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #fff;
+}
+
+.inputRegistro:focus {
+    background-color: #03030300;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #fff;
+}
+
+.inputRegistro::placeholder {
+    color: #fff;
+}
+
 
 /* #imagenContacto{
     width: max-content;
@@ -144,6 +164,9 @@ footer a:hover {
     }
     .textoResponsive {
         font-size: small;
+    }
+    .selectSm {
+        width: 90%;
     }
 }
 
