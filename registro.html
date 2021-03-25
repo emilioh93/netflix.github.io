@@ -18,11 +18,15 @@
                 <img src="img/logo.png" alt="Rollflix">
             </div>
             <h4 class="card-title mb-5 text-center">¡Unos pasos más y listo! Tampoco nos gustan los trámites.</h4>
-            <form class="mb-5">
-                <input type="text" class="form-control mb-3 inputRegistro" id="nombre" placeholder="Nombre y Apellido">
-                <input type="tel" class="form-control mb-3 inputRegistro" id="telefono" placeholder="Teléfono">
-                <input type="email" class="form-control mb-3 inputRegistro" id="email" placeholder="Email">
-                <input type="password" class="form-control mb-3 inputRegistro" id="clave" placeholder="Agregá una contraseña">
+            <form class="mb-5" onsubmit="validarGeneral(event)" id="formRegistro">
+                <input type="text" class="form-control mb-3 inputRegistro" id="nombre" placeholder="Nombre y Apellido" onblur="validarNombre(this)">
+                <div class="invalid-feedback">Debe ingresar un nombre y apellido para continuar</div>
+                <input type="tel" class="form-control mb-3 inputRegistro" id="telefono" placeholder="Teléfono" onblur="validarTelefono(this)">
+                <div class="invalid-feedback">Debe ingresar un número de teléfono para continuar</div>
+                <input type="email" class="form-control mb-3 inputRegistro" id="email" placeholder="Email" onblur="validarEmail(this)">
+                <div class="invalid-feedback">Debe ingresar un correo electrónico para continuar</div>
+                <input type="password" class="form-control mb-3 inputRegistro" id="contrasenia" placeholder="Agregá una contraseña" onblur="validarContrasenia(this)">
+                <div class="invalid-feedback">Debe ingresar una contraseña para continuar</div>
                 <div class="my-5">
                     <h5 class="card-title mb-3">Seleccioná el plan ideal para vos</h5>
                     <ul>
@@ -84,15 +88,10 @@
                 <button type="submit" class="btn btn-danger w-100">Iniciar Membresía</button>
             </form>
         </section>
-        <!-- <div class="cardRegistro">
-            <div class="card-body ms-auto me-auto w-75">
-                
-            </div>
-        </div> -->
-
     </main>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/validacionesRegistro.js"></script>
 </body>
 
 </html>
