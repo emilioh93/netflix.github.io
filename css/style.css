@@ -89,23 +89,13 @@ footer a:hover {
 /* REGISTRO */
 
 .parallax {
-    background-image: url("../img/fondologin.jpg");
+    background-image: url("../img/fondoRegistro.png");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.cardRegistro {
-    background-color: #030303;
     color: #fff;
-    background: rgba(0, 0, 0, .7);
-    border-radius: 15px;
-}
-
-.containerRegistro {
-    max-width: 50%;
 }
 
 
@@ -146,15 +136,12 @@ footer a:hover {
     #slider1 h2 {
         font-size: 1.5rem;
     }
-     p {
+    p {
         display: none;
     }
-
     #slider1 a {
-        
         font-size: 10px;
     }
-
     .textoResponsive {
         font-size: small;
     }
@@ -162,37 +149,30 @@ footer a:hover {
 
 @media (max-width: 1024px) {
     #slider1 a {
-        font-size:15 ;
+        font-size: 15;
     }
-
     #slider1 h2 {
         font-size: 2rem;
     }
-
     #slider2 h2 {
         font-size: 1.5rem;
     }
     p {
         display: none;
-        
     }
-
 }
 
-@media (max-width: 1366px){
-    #siler1 a{
+@media (max-width: 1366px) {
+    #siler1 a {
         font-size: 10rem;
     }
-
-    #slider1 h2{
+    #slider1 h2 {
         font-size: 4rem;
     }
-
-    #slider2 h2{
+    #slider2 h2 {
         font-size: 3.7rem;
     }
-
-    p{
+    p {
         display: none;
     }
 }
