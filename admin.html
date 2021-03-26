@@ -50,28 +50,7 @@
               </tr>
             </thead>
             <tbody id="tablaPeli">
-              <tr>
-                <td>123456</td>
-                <td>Harry Potter</td>
-                <td>Fantasia</td>
-                <td>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Modi, corporis.
-                </td>
-                <td>riverdale.png</td>
-                <td class="text-center"><input type="checkbox" /></td>
-                <td class="text-center">
-                  <button class="btn btn-sm">
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                  <button class="btn btn-sm">
-                    <i class="fas fa-edit"></i>
-                  </button>
-                  <button class="btn btn-sm">
-                    <i class="fas fa-star"></i>
-                  </button>
-                </td>
-              </tr>
+             
             </tbody>
           </table>
         </article>
@@ -97,7 +76,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form onsubmit="agregarPeli(event)" id="formPeli">
+            <form onsubmit="guardarPeli(event)" id="formPeli">
               <div class="mb-3">
                 <label class="form-label">Codigo</label>
                 <input
@@ -156,7 +135,7 @@
               </div>
               <div class="modal-footer d-flex justify-content-center">
                 <button
-                  type="button"
+                  type="submit"
                   class="btn btn-dark"
                   data-bs-dismiss="modal"
                 >

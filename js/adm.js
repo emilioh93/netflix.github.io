@@ -129,10 +129,13 @@ function validarGeneral() {
 
 listaPeliculas = [];
 
+//llamo a la funcion leer datos para tener actualizada la tabla
+
+leerDatos();
+
 //Funcion para agregar Pelicula
 
-function agregarPeli(event) {
-  event.preventDefault();
+function agregarPeli() {
   console.log("desde agregar peli");
   if (validarGeneral()) {
     let codigo = document.getElementById("codigo").value;
@@ -157,24 +160,29 @@ function agregarPeli(event) {
 
     localStorage.setItem("listaPelisKey", JSON.stringify(listaPeliculas));
 
+    leerDatos();
+
     limpiarFormulario();
+
+    return true
   }
 }
 
 //funcion para leer datos del local storage
 
-//funcion guardar pelicula
+// funcion guardar pelicula
 
-// function guardarPeli(event){
-//     event.preventDefault()
-//     console.log('desde guardar funkopop')
-//     if (validarGeneral()) {
-//         agregarPeli()
-//         alert('se agrego la pelicula')
-//     }else{
-//         alert('los datos no fueron validados')
-//     }
-// }
+function guardarPeli(event) {
+  event.preventDefault();
+  console.log("desde guardar funkopop");
+  if (agregarPeli()) {
+  
+    alert("se agrego la pelicula");
+    limpiarFormulario();
+  } else {
+    alert("los datos no fueron validados");
+  }
+}
 
 //limpiar formulario
 function limpiarFormulario() {
@@ -185,18 +193,21 @@ function limpiarFormulario() {
 //esta funcion lee los datos del local storage
 function leerDatos() {
   if (localStorage.length > 0) {
-    let _listapeliculas = JSON.parse(localStorage.getItem("listaPelisKey"));
-    console.log(_listapeliculas);
-    dibujarTabla(_listapeliculas);
+    let _listaPeliculas = JSON.parse(localStorage.getItem("listaPelisKey"));
+    console.log(_listaPeliculas);
+
+    if (listaPeliculas.length === 0) {
+      console.log("desde leerdatos");
+      listaPeliculas = _listaPeliculas;
+    }
+
+    dibujarTabla(_listaPeliculas);
   }
-
 }
-
-leerDatos();
 
 //dibujar datos en tabla
 
-function dibujarTabla(_listapeliculas) {
+function dibujarTabla(_listaPeliculas) {
   //traigo el cuerpo de la tabla como objeto
   let tabla = document.getElementById("tablaPeli");
 
@@ -206,15 +217,15 @@ function dibujarTabla(_listapeliculas) {
   //
   let filas;
 
-  for (let i in _listapeliculas) {
+  for (let i in _listaPeliculas) {
     filas = `<tr>
-        <td>${_listapeliculas[i].codigo}</td>
-        <td>${_listapeliculas[i].nombre}</td>
-        <td>${_listapeliculas[i].categoria}</td>
+        <td>${_listaPeliculas[i].codigo}</td>
+        <td>${_listaPeliculas[i].nombre}</td>
+        <td>${_listaPeliculas[i].categoria}</td>
         <td>
-        ${_listapeliculas[i].descripcion}
+        ${_listaPeliculas[i].descripcion}
         </td>
-        <td>${_listapeliculas[i].imagen}</td>
+        <td>${_listaPeliculas[i].imagen}</td>
         <td class="text-center"><input type="checkbox" /></td>
         <td class="text-center">
           <button class="btn btn-sm">
