@@ -1,7 +1,5 @@
 function validarNombre(input) {
-    console.log("Se ejecutó onblur");
-    // let input = document.querySelector("#nombre");
-    // trim() nos quita los espacios vacíos. Así evito que el usuario ponga espacios para completar un campo
+    console.log("Se ejecutó onblur de nombre");
     if (input.value.trim() === "") {
         input.className = "form-control is-invalid"
         return false;
@@ -12,6 +10,7 @@ function validarNombre(input) {
 }
 
 function validarTelefono(inputTel) {
+    console.log("Se ejecutó onblur de telefono");
     if (inputTel.value.trim() != "" && !isNaN(inputTel.value)) {
         inputTel.className = "form-control is-valid";
         return true;
@@ -33,46 +32,44 @@ function validarEmail(email) {
     }
 }
 
-function validarContrasenia(inputConsulta) {
-    if (inputConsulta.value.trim() != "" && inputConsulta.value.length >= 10) {
-        inputConsulta.className = "form-control is-valid";
+let pass1 = document.getElementById("contrasenia");
+let pass2 = document.getElementById("contrasenia2");
+
+function validarContrasenia1(contrasenia) {
+    let expresion = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    console.log(pass1.value);
+    if (contrasenia.value.trim() != "" && expresion.test(contrasenia.value)) {
+        contrasenia.className = "form-control is-valid";
         return true;
     } else {
-        inputConsulta.className = "form-control is-invalid";
+        contrasenia.className = "form-control is-invalid";
         return false;
     }
 }
 
-// let checkTerminos = document.querySelector("#terminos");
-// checkTerminos.addEventListener("change", validarTerminos);
-
-// function validarTerminos() {
-//     console.log("desde la función de checkbox");
-//     if (checkTerminos.checked) {
-//         checkTerminos.className = "form-check-input is-valid";
-//         return true;
-//     } else {
-//         checkTerminos.className = "form-check-input is-invalid";
-//         return false;
-//     }
-// }
+function validarContrasenia2(contrasenia) {
+    console.log(pass2.value);
+    if (pass1.value === pass2.value) {
+        contrasenia.className = "form-control is-valid";
+        return true;
+    } else {
+        contrasenia.className = "form-control is-invalid";
+        return false;
+    }
+}
 
 function validarGeneral(event) {
-    // preventDefault() detiene el comportamiento por defecto, en este caso recargar la página
     event.preventDefault();
     console.log("desde validar gral");
-    if (validarNombre(document.getElementById("nombre")) &&
-        validarTelefono(document.getElementById("telefono")) &&
+    if (campoObligatorio(document.getElementById("nombre")) &&
         validarEmail(document.getElementById("email")) &&
-        validarContrasenia(document.getElementById("contrasenia"))) {
+        validarNumeros(document.getElementById("telefono"))) {
 
         enviarEmail();
 
     } else {
         document.getElementById("alert").className = "alert alert-danger text-center";
         document.getElementById("alert").innerHTML = "Debe corregir los datos cargados";
-        // alert("Debe corregir los datos cargados");
-
     }
 }
 
@@ -80,13 +77,13 @@ function enviarEmail() {
     emailjs.send("service_t768bpe", "template_vc5x6ep", {
         to_name: document.getElementById("nombre").value,
         from_name: "Administrador",
-        message: `Email: ${document.getElementById("email").value} - Teléfono: ${document.getElementById("telefono").value} - Contrasenia: ${document.getElementById("contrasenia").value}`
+        message: `Email: ${document.getElementById("email").value} - Teléfono: ${document.getElementById("telefono").value} - Consulta: ${document.getElementById("consulta").value}`
     }).then(function(response) {
         console.log(response);
         document.getElementById("alert").className = "alert alert-success text-center";
         document.getElementById("alert").innerHTML = "Los datos fueron enviados al usuario";
         // alert("Los datos fueron enviados al usuario");
-        document.getElementById("formRegistro").reset();
+        document.getElementById("formSubsc").reset();
     }, function(error) {
         console.log(error);
         document.getElementById("alert").className = "alert alert-danger text-center";
