@@ -58,12 +58,35 @@ function validarContrasenia2(contrasenia) {
     }
 }
 
+// TODO: obligar al usuario a elegir una opción tanto en paquetes como en forma de pago
+
+function validarPaquetes(paquetes) {
+    if (paquetes.value === "basico") {
+        console.log(paquetes.value);
+    }
+    if (paquetes.value === "estandar") {
+        console.log("Elegí estandar");
+    }
+    if (paquetes.value === "premium") {
+        console.log("Elegí premium");
+    }
+}
+
+let pagos = document.getElementById("pago").selectedIndex;
+
+function validarPagos(pagos) {
+    if (pagos == null || pagos == 0) {
+        pagos.className = "form-control is-invalid";
+        return false;
+    }
+}
+
 function validarGeneral(event) {
     event.preventDefault();
     console.log("desde validar gral");
-    if (campoObligatorio(document.getElementById("nombre")) &&
+    if (validarNombre(document.getElementById("nombre")) &&
         validarEmail(document.getElementById("email")) &&
-        validarNumeros(document.getElementById("telefono"))) {
+        validarTelefono(document.getElementById("telefono"))) {
 
         enviarEmail();
 
@@ -74,16 +97,21 @@ function validarGeneral(event) {
 }
 
 function enviarEmail() {
-    emailjs.send("service_t768bpe", "template_vc5x6ep", {
+    emailjs.send("service_t768bpe", "template_ka586cf", {
         to_name: document.getElementById("nombre").value,
-        from_name: "Administrador",
-        message: `Email: ${document.getElementById("email").value} - Teléfono: ${document.getElementById("telefono").value} - Consulta: ${document.getElementById("consulta").value}`
+        from_name: document.getElementById("nombre").value,
+        from_telefono: document.getElementById("telefono").value,
+        from_email: document.getElementById("email").value,
+        from_contrasenia: document.getElementById("contrasenia").value,
+        // FIXME: no se envía la información
+        from_paquete: document.getElementsByName("paquetes").value,
+        from_pago: document.getElementById("pago").value,
     }).then(function(response) {
         console.log(response);
         document.getElementById("alert").className = "alert alert-success text-center";
         document.getElementById("alert").innerHTML = "Los datos fueron enviados al usuario";
         // alert("Los datos fueron enviados al usuario");
-        document.getElementById("formSubsc").reset();
+        document.getElementById("formRegistro").reset();
     }, function(error) {
         console.log(error);
         document.getElementById("alert").className = "alert alert-danger text-center";

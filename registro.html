@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Rollflix - Registro</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_q8OP0zpMQ5uIztxRuJo8w");
+        })();
+    </script>
 </head>
 
 <body class="parallax">
@@ -19,7 +25,6 @@
             </div>
             <h4 class="card-title mb-5 text-center">¡Unos pasos más y listo! Tampoco nos gustan los trámites.</h4>
             <form class="mb-5" onsubmit="validarGeneral(event)" id="formRegistro">
-                <div class="alert"></div>
                 <!-- Nombre -->
                 <input type="text" class="form-control mb-3 inputRegistro" name="nombre" id="nombre" placeholder="Nombre y Apellido" onblur="validarNombre(this)">
                 <div class="invalid-feedback">Debe ingresar un nombre y apellido para continuar</div>
@@ -74,9 +79,11 @@
                             <tr>
                                 <!-- Plan -->
                                 <th scope="row"><strong>Elección</strong></th>
-                                <td><input class="form-check-input" type="radio" id="flexRadioBasico" name="paquetes" value="basico"></td>
-                                <td><input class="form-check-input" type="radio" id="flexRadioEstandar" name="paquetes" value="estandar"></td>
-                                <td><input class="form-check-input" type="radio" id="flexRadioPremium" name="paquetes" value="premium" checked></td>
+                                <div>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioBasico" name="paquetes" value="basico" onclick="validarPaquetes(this)"></td>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioEstandar" name="paquetes" value="estandar" onclick="validarPaquetes(this)"></td>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioPremium" name="paquetes" value="premium" onclick="validarPaquetes(this)"></td>
+                                </div>
                             </tr>
                         </tbody>
                     </table>
@@ -87,16 +94,18 @@
                     <p>Tu membresía comienza en cuanto configures el pago.</p>
                     <p><strong>Sin compromisos. Cancelá online cuando quieras.</strong></p>
                     <div class="d-flex justify-content-center">
-                        <select class="form-select selectSm" name="pago" id="pago">
-                            <option selected>Seleccioná un método de pago</option>
+                        <select class="form-select selectSm" name="pago" id="pago" onblur="validarPagos(this)">
+                            <option value="" selected>Seleccioná un método de pago</option>
                             <option value="credito">Tarjeta de crédito</option>
                             <option value="debito">Tarjeta de débito</option>
                             <option value="transferencia">Transferencia</option>
                             <option value="deposito">Depósito</option>
                         </select>
+                        <div class="invalid-feedback">Debe elegir una opción de pago para continuar</div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-danger w-100">Iniciar Membresía</button>
+                <div id="alert"></div>
             </form>
         </section>
     </main>
