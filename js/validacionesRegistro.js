@@ -58,19 +58,21 @@ function validarContrasenia2(contrasenia) {
     }
 }
 
-// TODO: obligar al usuario a elegir una opción tanto en paquetes como en forma de pago
+// TODO: obligar al usuario a elegir una opción paquetes como en forma de pago
 
 function validarPaquetes(paquetes) {
     if (paquetes.value === "basico") {
         console.log(paquetes.value);
     }
     if (paquetes.value === "estandar") {
-        console.log("Elegí estandar");
+        console.log(paquetes.value);
     }
     if (paquetes.value === "premium") {
-        console.log("Elegí premium");
+        console.log(paquetes.value);
     }
 }
+
+// TODO: obligar al usuario a elegir forma de pago
 
 let pagos = document.getElementById("pago").selectedIndex;
 
@@ -97,14 +99,37 @@ function validarGeneral(event) {
 }
 
 function enviarEmail() {
+    let from_paquetes1 = document.getElementById("flexRadioBasico").checked;
+    let from_paquetes2 = document.getElementById("flexRadioEstandar").checked;
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 104 ~ enviarEmail ~ from_paquetes2", from_paquetes2)
+    let from_paquetes3 = document.getElementById("flexRadioPremium").checked;
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 106 ~ enviarEmail ~ from_paquetes3", from_paquetes3)
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 103 ~ enviarEmail ~ from_paquetes1", from_paquetes1)
+
+    let paquetes;
+
+    if (from_paquetes1) {
+        paquetes = document.getElementById("flexRadioBasico").value;
+    }
+    if (from_paquetes2) {
+        paquetes = document.getElementById("flexRadioEstandar").value;
+    }
+    if (from_paquetes3) {
+        paquetes = document.getElementById("flexRadioPremium").value;
+    }
+
+    console.log(paquetes);
+
+
+
+
     emailjs.send("service_t768bpe", "template_ka586cf", {
-        to_name: document.getElementById("nombre").value,
         from_name: document.getElementById("nombre").value,
         from_telefono: document.getElementById("telefono").value,
         from_email: document.getElementById("email").value,
         from_contrasenia: document.getElementById("contrasenia").value,
-        // FIXME: no se envía la información
-        from_paquete: document.getElementsByName("paquetes").value,
+        // FIXME: no se envía la información de paquetes
+        from_paquetes: paquetes,
         from_pago: document.getElementById("pago").value,
     }).then(function(response) {
         console.log(response);
@@ -120,3 +145,5 @@ function enviarEmail() {
     });
 
 }
+console.log("🚀 ~ file: validacionesRegistro.js ~ line 146 ~ enviarEmail ~ paquetes", paquetes)
+console.log("🚀 ~ file: validacionesRegistro.js ~ line 146 ~ enviarEmail ~ paquetes", paquetes)
