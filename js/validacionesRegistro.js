@@ -58,8 +58,6 @@ function validarContrasenia2(contrasenia) {
     }
 }
 
-// TODO: obligar al usuario a elegir una opción paquetes como en forma de pago
-
 function validarPaquetes(paquetes) {
     if (paquetes.value === "basico") {
         console.log(paquetes.value);
@@ -74,11 +72,12 @@ function validarPaquetes(paquetes) {
 
 // TODO: obligar al usuario a elegir forma de pago
 
-let pagos = document.getElementById("pago").selectedIndex;
+let pagos = document.getElementById('pago');
 
 function validarPagos(pagos) {
-    if (pagos == null || pagos == 0) {
-        pagos.className = "form-control is-invalid";
+    if (pagos.value == 0 ||
+        pagos.value == "") {
+        pago.className = "form-control is-invalid";
         return false;
     }
 }
@@ -88,7 +87,8 @@ function validarGeneral(event) {
     console.log("desde validar gral");
     if (validarNombre(document.getElementById("nombre")) &&
         validarEmail(document.getElementById("email")) &&
-        validarTelefono(document.getElementById("telefono"))) {
+        validarTelefono(document.getElementById("telefono")) &&
+        validarPagos(document.getElementById("pago"))) {
 
         enviarEmail();
 
@@ -101,10 +101,7 @@ function validarGeneral(event) {
 function enviarEmail() {
     let from_paquetes1 = document.getElementById("flexRadioBasico").checked;
     let from_paquetes2 = document.getElementById("flexRadioEstandar").checked;
-    console.log("🚀 ~ file: validacionesRegistro.js ~ line 104 ~ enviarEmail ~ from_paquetes2", from_paquetes2)
     let from_paquetes3 = document.getElementById("flexRadioPremium").checked;
-    console.log("🚀 ~ file: validacionesRegistro.js ~ line 106 ~ enviarEmail ~ from_paquetes3", from_paquetes3)
-    console.log("🚀 ~ file: validacionesRegistro.js ~ line 103 ~ enviarEmail ~ from_paquetes1", from_paquetes1)
 
     let paquetes;
 
@@ -118,32 +115,27 @@ function enviarEmail() {
         paquetes = document.getElementById("flexRadioPremium").value;
     }
 
-    console.log(paquetes);
-
-
-
-
     emailjs.send("service_t768bpe", "template_ka586cf", {
         from_name: document.getElementById("nombre").value,
         from_telefono: document.getElementById("telefono").value,
         from_email: document.getElementById("email").value,
         from_contrasenia: document.getElementById("contrasenia").value,
-        // FIXME: no se envía la información de paquetes
         from_paquetes: paquetes,
         from_pago: document.getElementById("pago").value,
     }).then(function(response) {
         console.log(response);
-        document.getElementById("alert").className = "alert alert-success text-center";
-        document.getElementById("alert").innerHTML = "Los datos fueron enviados al usuario";
-        // alert("Los datos fueron enviados al usuario");
+        Swal.fire(
+            '¡Mensaje enviado!',
+            'Los datos fueron enviados correctamente. Le informaremos cuando sea dado de alta.',
+            'success'
+        )
         document.getElementById("formRegistro").reset();
     }, function(error) {
         console.log(error);
-        document.getElementById("alert").className = "alert alert-danger text-center";
-        document.getElementById("alert").innerHTML = "Error en el envío. Inténtelo más tarde";
-        // alert("Error en el envío. Inténtelo más tarde");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '¡Algo salió mal! Asegúrate de haber completado los datos correctamente o inténtalo más tarde.',
+        })
     });
-
 }
-console.log("🚀 ~ file: validacionesRegistro.js ~ line 146 ~ enviarEmail ~ paquetes", paquetes)
-console.log("🚀 ~ file: validacionesRegistro.js ~ line 146 ~ enviarEmail ~ paquetes", paquetes)
