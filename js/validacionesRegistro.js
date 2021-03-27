@@ -70,8 +70,6 @@ function validarPaquetes(paquetes) {
     }
 }
 
-// TODO: obligar al usuario a elegir forma de pago
-
 let pagos = document.getElementById('pago');
 
 function validarPagos(pagos) {
