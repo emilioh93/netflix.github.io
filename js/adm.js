@@ -129,6 +129,17 @@ function validarGeneral() {
 
 listaPeliculas = [];
 
+//Modal arreglo
+
+// const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula'))
+
+// let btnAgregar = document.getElementById('btnAgregar');
+// btnAgregar.addEventListener('click', function(){
+//   limpiarFormulario();
+//   console.log('desde btn agregar')
+//   modalProducto.show();
+// })
+
 //llamo a la funcion leer datos para tener actualizada la tabla
 
 leerDatos();
@@ -164,11 +175,73 @@ function agregarPeli() {
 
     limpiarFormulario();
 
+    
+
     return true
   }
 }
 
-//funcion para leer datos del local storage
+//funcion preparar pelicula
+
+function prepararPeli(boton){
+  console.log(boton.id)
+
+  let peliEncontrada = listaPeliculas.find((producto) => {return producto.codigo === boton.id})
+  console.log(peliEncontrada)
+
+  document.getElementById('codigo').value = peliEncontrada.codigo;
+  document.getElementById('nombre').value = peliEncontrada.nombre;
+  document.getElementById('categoria').value = peliEncontrada.categoria;
+  document.getElementById('descripcionPelicula').value = peliEncontrada.descripcionPelicula;
+  document.getElementById('imagen').value = peliEncontrada.imagen;
+  document.getElementById('nombre').value = peliEncontrada.nombre;
+
+  modalProducto.show();
+}
+
+
+//funcion para eliminar pelicula
+
+function eliminarPeli(boton){
+
+console.log(boton.id)
+
+Swal.fire({
+  title: 'Estas seguro de eliminar la Pelicula',
+  text: "No puedes volver atras luego de eliminar una Pelicula",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, borrala',
+  cancelButtonText: 'Cancelar',
+}).then((result) => {
+  if (result.isConfirmed) {
+    let peliculaFiltrada = listaPeliculas.filter((producto) => producto.codigo != boton.id);
+    console.log(peliculaFiltrada)
+
+
+    listaPeliculas = peliculaFiltrada;
+    
+
+    //guardar los datos en local storage
+
+    localStorage.setItem('listaPelisKey',JSON.stringify(listaPeliculas));
+
+    leerDatos();
+    
+
+    Swal.fire(
+      'Borrado!',
+      'La pelicula seleccionada fue eliminada.',
+      'success'
+    )
+  }
+})
+
+}
+
+
 
 // funcion guardar pelicula
 
@@ -177,7 +250,8 @@ function guardarPeli(event) {
   console.log("desde guardar funkopop");
   if (agregarPeli()) {
   
-    alert("se agrego la pelicula");
+    Swal.fire('Se agrego la Pelicula!!!');
+
     limpiarFormulario();
   } else {
     alert("los datos no fueron validados");
@@ -228,13 +302,13 @@ function dibujarTabla(_listaPeliculas) {
         <td>${_listaPeliculas[i].imagen}</td>
         <td class="text-center"><input type="checkbox" /></td>
         <td class="text-center">
-          <button class="btn btn-sm">
+          <button class="btn btn-sm" onclick="eliminarPeli(this)" id="${_listaPeliculas[i].codigo}">
             <i class="fas fa-trash-alt"></i>
           </button>
-          <button class="btn btn-sm">
+          <button class="btn btn-sm" onclick="prepararPeli(this)" id="${_listaPeliculas[i].codigo}">
             <i class="fas fa-edit"></i>
           </button>
-          <button class="btn btn-sm">
+          <button class="btn btn-sm" onclick="" id="${_listaPeliculas[i].codigo}">
             <i class="fas fa-star"></i>
           </button>
         </td>
