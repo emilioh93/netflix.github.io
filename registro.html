@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ec4b6d9c2.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rollflix - Registro</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_q8OP0zpMQ5uIztxRuJo8w");
+        })();
+    </script>
+</head>
+
+<body class="parallax">
+    <main class="container d-flex justify-content-center">
+        <section>
+            <div class="logo text-center py-5">
+                <img src="img/logo.png" alt="Rollflix">
+            </div>
+            <h4 class="card-title mb-5 text-center">¡Unos pasos más y listo! Tampoco nos gustan los trámites.</h4>
+            <!-- FIXME: Al hacer Tab, salta el error en todos los campos -->
+            <form class="mb-5" onsubmit="validarGeneral(event)" id="formRegistro">
+                <!-- Nombre -->
+                <input type="text" class="form-control mb-3 inputRegistro" name="nombre" id="nombre" placeholder="Nombre y Apellido" onblur="validarNombre(this)">
+                <div class="invalid-feedback">Debe ingresar un nombre y apellido para continuar</div>
+                <!-- Teléfono -->
+                <input type="tel" class="form-control mb-3 inputRegistro" name="telefono" id="telefono" placeholder="Teléfono" onblur="validarTelefono(this)">
+                <div class="invalid-feedback">Debe ingresar un número de teléfono para continuar</div>
+                <!-- Email -->
+                <input type="email" class="form-control mb-3 inputRegistro" name="email" id="email" placeholder="Email" onblur="validarEmail(this)">
+                <div class="invalid-feedback">Debe ingresar un correo electrónico para continuar</div>
+                <!-- Contraseña -->
+                <div class="mb-3">
+                    <input type="password" class="form-control inputRegistro" name="contrasenia" id="contrasenia" placeholder="Agregá una contraseña" onblur="validarContrasenia1(this)">
+                    <small>La contraseña debe tener al entre <strong>8 y 16 caracteres</strong>, al menos <strong>un dígito</strong>, al menos <strong>una minúscula</strong> y al menos <strong>una mayúscula</strong>.</small>
+                </div>
+                <input type="password" class="form-control mb-3 inputRegistro" name="contrasenia2" id="contrasenia2" placeholder="Repetí la contraseña" onblur="validarContrasenia2(this)">
+                <div class="invalid-feedback">Debe ingresar una contraseña para continuar</div>
+                <div class="my-5">
+                    <h5 class="card-title mb-3">Seleccioná el plan ideal para vos</h5>
+                    <ul>
+                        <li>Mirá todo lo que quieras. Sin anuncios.</li>
+                        <li>Recomendaciones exclusivas para ti.</li>
+                        <li>Puedes cambiar de plan o cancelar cuando quieras.</li>
+                    </ul>
+                    <table class="table text-light text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Básico</th>
+                                <th scope="col">Estándar</th>
+                                <th scope="col">Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Precio mensual</th>
+                                <td>$279</td>
+                                <td>$459</td>
+                                <td>$669</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Calidad de video</th>
+                                <td>Buena</td>
+                                <td>Mejor</td>
+                                <td>Óptima</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Resolución</th>
+                                <td>480p</td>
+                                <td>1080p</td>
+                                <td>4k+HDR</td>
+                            </tr>
+                            <tr>
+                                <!-- Plan -->
+                                <th scope="row"><strong>Elección</strong></th>
+                                <div>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioBasico" name="paquetes" value="basico" onclick="validarPaquetes(this)"></td>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioEstandar" name="paquetes" value="estandar" onclick="validarPaquetes(this)"></td>
+                                    <td><input class="form-check-input" type="radio" id="flexRadioPremium" name="paquetes" value="premium" onclick="validarPaquetes(this)" checked></td>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="my-5 text-center">
+                    <!-- Forma de pago -->
+                    <h5 class="card-title mb-3">Configurá tu forma de pago.</h5>
+                    <p>Tu membresía comienza en cuanto configures el pago.</p>
+                    <p><strong>Sin compromisos. Cancelá online cuando quieras.</strong></p>
+                    <div class="d-flex justify-content-center">
+                        <select class="form-select selectSm" name="pago" id="pago" onblur="validarPagos(this)">
+                            <option value="" selected>Seleccioná un método de pago</option>
+                            <option value="credito">Tarjeta de crédito</option>
+                            <option value="debito">Tarjeta de débito</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="deposito">Depósito</option>
+                        </select>
+                        <!-- FIXME: no aparece el invalid feedback de forma de pago -->
+                        <div class="invalid-feedback">Debe elegir una opción de pago para continuar</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger w-100">Iniciar Membresía</button>
+                <div id="alert"></div>
+            </form>
+        </section>
+    </main>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/validacionesRegistro.js"></script>
+</body>
+
+</html>

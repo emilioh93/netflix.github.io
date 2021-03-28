@@ -37,6 +37,13 @@ footer a:hover {
 }
 
 
+/* Fondo Admn */
+
+.fondoAdm {
+    background-color: white;
+}
+
+
 /* fondo body login*/
 
 .login {
@@ -95,12 +102,45 @@ footer a:hover {
 }
 
 
+/* REGISTRO */
+
+.parallax {
+    background-image: url("../img/fondoRegistro.png");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.inputRegistro {
+    background-color: #03030300;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #fff;
+}
+
+.inputRegistro:focus {
+    background-color: #03030300;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #fff;
+}
+
+.inputRegistro::placeholder {
+    color: #fff;
+}
+
+
 /* #imagenContacto{
     width: max-content;
 
 } */
 
-7
+
 /* estilos portada */
 
 #riverdale {
@@ -121,6 +161,8 @@ footer a:hover {
 }
 
 #descripcion {
+    margin-bottom: 2.3rem;
+    text-align: left;
     text-shadow: 1px 1px 5px #030303;
     font-size: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -170,12 +212,48 @@ footer a:hover {
 
 @media (max-width: 767.98px) {
     #slider1 h2 {
-        font-size: medium;
+        font-size: 1.5rem;
     }
-    #slider1 p {
+    p {
         display: none;
+    }
+    #slider1 a {
+        font-size: 10px;
     }
     .textoResponsive {
         font-size: small;
+    }
+    .selectSm {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #slider1 a {
+        font-size: 15;
+    }
+    #slider1 h2 {
+        font-size: 2rem;
+    }
+    #slider2 h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        display: none;
+    }
+}
+
+@media (max-width: 1366px) {
+    #siler1 a {
+        font-size: 10rem;
+    }
+    #slider1 h2 {
+        font-size: 4rem;
+    }
+    #slider2 h2 {
+        font-size: 3.7rem;
+    }
+    p {
+        display: none;
     }
 }
