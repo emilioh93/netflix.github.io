@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 
@@ -49,6 +49,11 @@ footer a:hover {
 .login {
     background-image: url(../img/fondologin.jpg);
     margin-top: 0px;
+}
+
+.login .logo {
+    padding-top: 20px;
+    margin-bottom: 30px;
 }
 
 .overlay {
