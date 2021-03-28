@@ -85,13 +85,22 @@ footer a:hover {
     border-radius: 5px;
 }
 
+.recuperar-contrasena {
+    background-image: url(../img/fondoReccontrasena.jpg);
+    background-size: cover;
+}
+
+.recuperar-contrasena .card {
+    border: 1px solid #e50914;
+}
+
 
 /* #imagenContacto{
     width: max-content;
 
 } */
 
-
+7
 /* estilos portada */
 
 #riverdale {
@@ -117,46 +126,48 @@ footer a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
 /* Pagina de contacto */
 
-.fondoContacto{
-  background-image: url(/img/contacus\ 1.jpg);
-  object-fit: cover;
+.fondoContacto {
+    background-image: url(/img/contacus\ 1.jpg);
+    object-fit: cover;
 }
 
-.transparente{
-  opacity: 0.9;
-  -moz-opacity: 0.8;
-  filter: alpha(opacity=80);
-  -khtml-opacity: 0.8;
+.transparente {
+    opacity: 0.9;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    -khtml-opacity: 0.8;
 }
+
 
 /* Pagina de admin */
 
-.fondoAdm{
+.fondoAdm {
     background-color: white;
 }
 
+
 /* Pagina de Pelicula */
 
-.fondoPelicula{
+.fondoPelicula {
     background-image: url(/img/fondopelicula.jpg);
     width: 100%;
     object-fit: contain;
-    
 }
 
-.imagenPelicula{
+.imagenPelicula {
     object-fit: contain;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
 }
 
-.cardDetalles{
+.cardDetalles {
     border-radius: 35px;
     box-shadow: 0px 0px 20px grey;
 }
-  
+
 @media (max-width: 767.98px) {
     #slider1 h2 {
         font-size: medium;
@@ -164,7 +175,6 @@ footer a:hover {
     #slider1 p {
         display: none;
     }
-    
     .textoResponsive {
         font-size: small;
     }
