@@ -5,7 +5,7 @@ class Peli {
     this.nombre = nombre;
     this.categoria = categoria;
     this.descripcionPelicula = descripcionPelicula;
-    this.imagen = nombre;
+    this.imagen = imagen;
     this.publicado = publicado;
   }
 }
@@ -132,6 +132,8 @@ listaPeliculas = [];
 //Modal arreglo
 const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula'));
 
+//limpiar formulario
+
 
 
 modalProducto.hide();
@@ -183,7 +185,7 @@ function agregarPeli() {
 
     modalProducto.hide();
 
-    return true;
+  
   }
 }
 
@@ -200,8 +202,8 @@ function prepararPeli(boton){
   document.getElementById('categoria').value = peliEncontrada.categoria;
   document.getElementById('descripcionPelicula').value = peliEncontrada.descripcionPelicula;
   document.getElementById('imagen').value = peliEncontrada.imagen;
-  document.getElementById('nombre').value = peliEncontrada.nombre;
 
+  //cambiar el estado de mi variable modificar Pelicula
   modificarPelicula=true;
 
   modalProducto.show();
@@ -240,8 +242,12 @@ function modificarPeli(){
   );
 
   leerDatos();
-
+  
+  limpiarFormulario();
+  
   modalProducto.hide();
+  
+
 }
 
 
@@ -293,7 +299,7 @@ Swal.fire({
 function guardarPeli(event) {
   event.preventDefault();
   console.log("desde guardar Peli");
-  if (modificarPelicula) {
+  if (modificarPelicula === true) {
     console.log('desde modificar pelicula')
     modificarPeli();
 
@@ -307,6 +313,8 @@ function guardarPeli(event) {
 //limpiar formulario
 function limpiarFormulario() {
   document.getElementById("formPeli").reset();
+  modificarPelicula = false
+
 }
 
 //funcion para leer datos
