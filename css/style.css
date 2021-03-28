@@ -36,10 +36,13 @@ footer a:hover {
     width: 100%;
 }
 
+
 /* Fondo Admn */
-.fondoAdm{
+
+.fondoAdm {
     background-color: white;
 }
+
 
 /* fondo body login*/
 
@@ -87,6 +90,15 @@ footer a:hover {
 .borde {
     box-shadow: 0px 0px 10px grey;
     border-radius: 5px;
+}
+
+.recuperar-contrasena {
+    background-image: url(../img/fondoReccontrasena.jpg);
+    background-size: cover;
+}
+
+.recuperar-contrasena .card {
+    border: 1px solid #e50914;
 }
 
 
@@ -154,6 +166,48 @@ footer a:hover {
     text-shadow: 1px 1px 5px #030303;
     font-size: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* Pagina de contacto */
+
+.fondoContacto {
+    background-image: url(/img/contacus\ 1.jpg);
+    object-fit: cover;
+}
+
+.transparente {
+    opacity: 0.9;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    -khtml-opacity: 0.8;
+}
+
+
+/* Pagina de admin */
+
+.fondoAdm {
+    background-color: white;
+}
+
+
+/* Pagina de Pelicula */
+
+.fondoPelicula {
+    background-image: url(/img/fondopelicula.jpg);
+    width: 100%;
+    object-fit: contain;
+}
+
+.imagenPelicula {
+    object-fit: contain;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.cardDetalles {
+    border-radius: 35px;
+    box-shadow: 0px 0px 20px grey;
 }
 
 @media (max-width: 767.98px) {

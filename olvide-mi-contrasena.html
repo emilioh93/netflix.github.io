@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Inicio</title>
+    <title>Olvide mi Contraseña</title>
 </head>
 
 
 
-<body class="login">
+<body class="login recuperar-contrasena">
     <div class="overlay">
         <header class="container-fluid">
             <div class="logo">
@@ -24,34 +24,22 @@
         <main class="container justify-content-center d-flex align-items-center">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title mb-3">Inicia sesión</h2>
+                    <h2 class="card-title mb-3">Olvidaste tu contraseña</h2>
                     <form class="mb-5">
+                        <div class="my-4">
+                            Te enviaremos un email con instrucciones sobre como restablecer tu contraseña
+                        </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" id='email' placeholder="juandiaz@gmail.com" autocomplete="off" onblur="validarMail(this)">
+                            <input type="email" class="form-control" id='recuperar-email' placeholder="juandiaz@gmail.com" autocomplete="off" onblur="validarMail(this)">
                             <div class="invalid-feedback">
                                 Debe ingresar un email
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="clave" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="clave" onblur="campoRequerido(this)">
-                            <div class="invalid-feedback">
-                                Debe ingresar una clave
-                            </div>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100">Iniciar sesión</button>
+                        <button type="submit" class="btn btn-danger w-100">Enviar un email</button>
                     </form>
-
-                    <a href="olvide-mi-contrasena.html" class="card-link">Olvide mi Contraseña</a>
-                    <a href="#" class="card-link">Registrarme</a>
                 </div>
             </div>
-
         </main>
 
     </div>
