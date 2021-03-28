@@ -139,6 +139,7 @@ const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula
 modalProducto.hide();
 let btnAgregar = document.getElementById('btnAgregar')
 btnAgregar.addEventListener('click', function(){
+  limpiarFormulario();
   modalProducto.show();
 })
 

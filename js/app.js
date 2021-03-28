@@ -25,7 +25,9 @@ function validarLogin(event) {
     if (validarMail(document.getElementById('email')) == true && campoRequerido(document.getElementById('clave'))) {
         if (document.getElementById('email').value == "admin@rollflix.com" && document.getElementById('clave').value == "admin") {
 
-            window.location.href = "http://127.0.0.1:5500/netflix.github.io/admin.html"
+            // window.location.href = "http://netflix.github.io/admin.html"
+            location.href = 'admin.html'
+            
         } else {
             alert("Usuario no valido")
         }
