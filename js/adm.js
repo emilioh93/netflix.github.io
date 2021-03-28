@@ -1,10 +1,10 @@
 //Creacion clase para pelicula
 class Peli {
-  constructor(codigo, nombre, categoria, descripcion, imagen, publicado) {
+  constructor(codigo, nombre, categoria, descripcionPelicula, imagen, publicado) {
     this.codigo = codigo;
     this.nombre = nombre;
     this.categoria = categoria;
-    this.descripcion = descripcion;
+    this.descripcionPelicula = descripcionPelicula;
     this.imagen = nombre;
     this.publicado = publicado;
   }
@@ -130,15 +130,19 @@ function validarGeneral() {
 listaPeliculas = [];
 
 //Modal arreglo
+const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula'));
 
-// const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula'))
 
-// let btnAgregar = document.getElementById('btnAgregar');
-// btnAgregar.addEventListener('click', function(){
-//   limpiarFormulario();
-//   console.log('desde btn agregar')
-//   modalProducto.show();
-// })
+
+modalProducto.hide();
+let btnAgregar = document.getElementById('btnAgregar')
+btnAgregar.addEventListener('click', function(){
+  modalProducto.show();
+})
+
+//variable bandera unirversal
+
+let modificarPelicula = false
 
 //llamo a la funcion leer datos para tener actualizada la tabla
 
@@ -173,11 +177,13 @@ function agregarPeli() {
 
     leerDatos();
 
+    Swal.fire('Se agrego la Pelicula!!!');
+
     limpiarFormulario();
 
-    
+    modalProducto.hide();
 
-    return true
+    return true;
   }
 }
 
@@ -196,7 +202,46 @@ function prepararPeli(boton){
   document.getElementById('imagen').value = peliEncontrada.imagen;
   document.getElementById('nombre').value = peliEncontrada.nombre;
 
+  modificarPelicula=true;
+
   modalProducto.show();
+}
+
+//Funcion para  modificar Pelicula
+
+function modificarPeli(){
+
+  //tomar los valores modificados del formulario
+  let codigo = document.getElementById('codigo').value;
+  let nombre = document.getElementById('nombre').value;
+  let categoria = document.getElementById('categoria').value;
+  let descripcionPelicula = document.getElementById('descripcionPelicula').value;
+  let imagen = document.getElementById('imagen').value;
+
+  //buscar el objeto y modificar la Pelicula
+
+   for(let i in listaPeliculas){
+     
+     if (listaPeliculas[i].codigo === codigo) {
+       listaPeliculas[i].nombre = nombre;
+       listaPeliculas[i].categoria = categoria;
+       listaPeliculas[i].descripcionPelicula = descripcionPelicula;
+       listaPeliculas[i].imagen = imagen;
+     }
+   }
+   
+   //actualizo el local storage
+   localStorage.setItem('listaPelisKey', JSON.stringify(listaPeliculas));
+
+   Swal.fire(
+    "Pelicula modificada",
+    "La pelicula seleccionada se modifico correctamente!",
+    "success"
+  );
+
+  leerDatos();
+
+  modalProducto.hide();
 }
 
 
@@ -247,14 +292,15 @@ Swal.fire({
 
 function guardarPeli(event) {
   event.preventDefault();
-  console.log("desde guardar funkopop");
-  if (agregarPeli()) {
-  
-    Swal.fire('Se agrego la Pelicula!!!');
+  console.log("desde guardar Peli");
+  if (modificarPelicula) {
+    console.log('desde modificar pelicula')
+    modificarPeli();
 
-    limpiarFormulario();
   } else {
-    alert("los datos no fueron validados");
+    console.log('desde agregar pelicula')
+    agregarPeli()
+    
   }
 }
 
@@ -297,7 +343,7 @@ function dibujarTabla(_listaPeliculas) {
         <td>${_listaPeliculas[i].nombre}</td>
         <td>${_listaPeliculas[i].categoria}</td>
         <td>
-        ${_listaPeliculas[i].descripcion}
+        ${_listaPeliculas[i].descripcionPelicula}
         </td>
         <td>${_listaPeliculas[i].imagen}</td>
         <td class="text-center"><input type="checkbox" /></td>
