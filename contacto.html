@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/f412a4f89a.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
-(function() {
-emailjs.init("user_VuOzu2MjCeCYYEbY56bbP");
-})();
-</script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_VuOzu2MjCeCYYEbY56bbP");
+        })();
+    </script>
     <title>Contacto</title>
 </head>
 
@@ -58,74 +58,75 @@ emailjs.init("user_VuOzu2MjCeCYYEbY56bbP");
                         <h5 class="card-title ">Formulario de Contacto</h5>
                     </div>
                     <div class="card-body">
-                        <form onsubmit="validarGeneral(event)" action="" class="">
+                        <form onsubmit="validarGeneral(event)" id="formContacto">
                             <div class="mb-3">
                                 <label class="form-label text-light">Nombre y Apellido</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" onblur="campoRequerido(this)"/>
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" onblur="campoRequerido(this)" />
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label text-light">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail..." onblur="validarEmail(this)"/>
+                                <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail..." onblur="validarEmail(this)" />
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label text-light">Consulta</label>
-                                <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta" onblur="validarConsulta(this)"></textarea>
+                                <textarea name="" id="consulta" class="form-control" placeholder="Ingrese su consulta" onblur="validarConsulta(this)"></textarea>
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input type="checkbox" id="terminos" class="form-check-input" />
                                     <label class="form-check-label text-light">Estas de acuerdo con los terminos y condiciones</label>
-                    <div class="invalid-feedback">
-                      Debe aceptar los terminos y condiciones
+                                    <div class="invalid-feedback">
+                                        Debe aceptar los terminos y condiciones
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-danger">Enviar</button>
+                            </div>
+                        </form>
                     </div>
-                  </div>
                 </div>
-                <div>
-                  <button type="submit" class="btn btn-danger">Enviar</button>
-                </div>
-              </form>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
     <footer class="text-secondary py-5 text-center">
-      <section class="container ">
-          <article class="row flex-md-row-reverse">
-              <div class="col-sm-12 col-lg-4 mb-4">
-                  <a href="https://www.facebook.com/" class="mx-2"> <i class="fab fa-facebook-square fa-2x "></i></a>
-                  <a href="https://twitter.com/login?lang=es" class="mx-2"><i class="fab fa-twitter fa-2x "></i></a>
-                  <a href="https://www.instagram.com/?hl=es-la" class="mx-2"><i class="fab fa-instagram fa-2x "></i></a>
-                  <a href="https://www.youtube.com//?hl=es-la" class="mx-2"><i class="fab fa-youtube fa-2x "></i></a>
-              </div>
-              <div class="col-sm-12 col-lg-4 mb-4">
-                  <ul class="nav flex-column">
-                      <li class="nav-item">
-                          <a href="contacto.html" class="nav-link">Contacto</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="aboutUs.html" class="nav-link">Nosotros</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="pagina404.html" class="nav-link">Recomendadas</a>
-                      </li>
-                  </ul>
-              </div>
+        <section class="container ">
+            <article class="row flex-md-row-reverse">
+                <div class="col-sm-12 col-lg-4 mb-4">
+                    <a href="./pagina404.html" class="mx-2"> <i class="fab fa-facebook-square fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-twitter fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-instagram fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-youtube fa-2x "></i></a>
+                </div>
+                <div class="col-sm-12 col-lg-4 mb-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="contacto.html" class="nav-link">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="aboutUs.html" class="nav-link">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pagina404.html" class="nav-link">Recomendadas</a>
+                        </li>
+                    </ul>
+                </div>
 
-              <div class="col-sm-12  col-lg-4 mb-4 ">
-                  <div class="logofooter mb-3">
-                      <img src="img/logo.png" alt="Rollflix">
-                  </div>
-                  <p> <small>&copy; 2021 Todos los derechos reservados</small> </p>
-              </div>
-          </article>
-      </section>
-  </footer>
+                <div class="col-sm-12  col-lg-4 mb-4 ">
+                    <div class="logofooter mb-3">
+                        <img src="img/logo.png" alt="Rollflix">
+                    </div>
+                    <p> <small>&copy; 2021 Todos los derechos reservados</small> </p>
+                </div>
+            </article>
+        </section>
+    </footer>
     <script src="/js/bootstrap.min.js"></script>
     <script src="js/contacto.js"></script>
     <script src="js/app.js"></script>
-  </body>
+</body>
+
 </html>
