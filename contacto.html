@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/f412a4f89a.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/f412a4f89a.js" crossorigin="anonymous"></script>
+    <title>Contacto</title>
+</head>
 
-  <body class="fondoContacto">
-    <header>
-      <!-- insertar navbar -->
-    </header>
-    <main class="my-4 container">
-      <section class="row">
-        <div class="col-sm-12 d-flex justify-content-center align-items-center">
-          <div class="card bg-dark transparente">
-            <div class="card-header bg-dark text-light">
-              <h5 class="card-title ">Formulario de Contacto</h5>
+<body class="fondoContacto">
+    <header class="py-0 fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Rollflix">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutUs.html">Nosotros</a>
+                        </li>
+                    </ul>
+                    <div id="navRight" class="d-flex">
+                        <a class="btn btn-outline-danger btn-sm btn-login" href="login.html">Login</a>
+                        <a class="btn btn-outline-danger btn-sm btn-admin" href="admin.html">Administracion</a>
+                        <a class="btn btn-outline-danger btn-sm btn-reg" href="registro.html">Registrarme</a>
+                        <a class="btn btn-outline-danger btn-sm btn-logout" href="index.html">Cerrar Sesion</a>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-              <form action="" class="" onsubmit="validarGeneral(event)" id='formSuscripcion'>
-                <div class="mb-3">
-                  <label class="form-label text-light">Nombre y Apellido</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="nombre"
-                    placeholder="Juan Perez"
-                  />
-                  <div class="invalid-feedback">Campo invalido</div>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label text-light">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="JuanPerez@gmail..."
-                  />
-                  <div class="invalid-feedback">Campo invalido</div>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label text-light">Consulta</label>
-                  <textarea
-                    name=""
-                    id="Consulta"
-                    class="form-control"
-                    placeholder="Ingrese su consulta"
-                  ></textarea>
-                  <div class="invalid-feedback">Campo invalido</div>
-                </div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      id="terminos"
-                      class="form-check-input"
-                    />
-                    <label class="form-check-label text-light"
-                      >Estas de acuerdo con los terminos y condiciones</label
+        </nav>
+    </header>
+    <main class="my-5 py-5 container">
+        <section class="row">
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="card bg-dark transparente">
+                    <div class="card-header bg-dark text-light">
+                        <h5 class="card-title ">Formulario de Contacto</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="" class="">
+                            <div class="mb-3">
+                                <label class="form-label text-light">Nombre y Apellido</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" />
+                                <div class="invalid-feedback">Campo invalido</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-light">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail..." />
+                                <div class="invalid-feedback">Campo invalido</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-light">Consulta</label>
+                                <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta"></textarea>
+                                <div class="invalid-feedback">Campo invalido</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" id="terminos" class="form-check-input" />
+                                    <label class="form-check-label text-light">Estas de acuerdo con los terminos y condiciones</label
                     >
                     <div class="invalid-feedback">
                       Debe aceptar los terminos y condiciones
@@ -80,10 +87,43 @@
         </div>
       </section>
     </main>
-    <footer>
-      <!-- insertar footer -->
-    </footer>
+    <footer class="text-secondary py-5 text-center">
+      <section class="container ">
+          <article class="row flex-md-row-reverse">
+              <div class="col-sm-12 col-lg-4 mb-4">
+                  <a href="https://www.facebook.com/" class="mx-2"> <i class="fab fa-facebook-square fa-2x "></i></a>
+                  <a href="https://twitter.com/login?lang=es" class="mx-2"><i class="fab fa-twitter fa-2x "></i></a>
+                  <a href="https://www.instagram.com/?hl=es-la" class="mx-2"><i class="fab fa-instagram fa-2x "></i></a>
+                  <a href="https://www.youtube.com//?hl=es-la" class="mx-2"><i class="fab fa-youtube fa-2x "></i></a>
+              </div>
+              <div class="col-sm-12 col-lg-4 mb-4">
+                  <ul class="nav flex-column">
+                      <li class="nav-item">
+                          <a href="contacto.html" class="nav-link">Contacto</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="aboutUs.html" class="nav-link">Nosotros</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="pagina404.html" class="nav-link">Recomendadas</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="col-sm-12  col-lg-4 mb-4 ">
+                  <div class="logofooter mb-3">
+                      <img src="img/logo.png" alt="Rollflix">
+                  </div>
+                  <p> <small>&copy; 2021 Todos los derechos reservados</small> </p>
+              </div>
+          </article>
+      </section>
+  </footer>
     <script src="/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
     <script src="js/contacto.js"></script>
+=======
+    <script src="js/app.js"></script>
+>>>>>>> 72681dc5230b89b5ef25849eabaa14c15841bcbf
   </body>
 </html>

@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Inicio</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <title> Login</title>
 </head>
 
 
@@ -18,14 +20,16 @@
     <div class="overlay">
         <header class="container-fluid">
             <div class="logo">
-                <img src="img/logo.png" alt="Rollflix">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Rollflix">
+                </a>
             </div>
         </header>
         <main class="container justify-content-center d-flex align-items-center">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title mb-3">Inicia sesión</h2>
-                    <form class="mb-5">
+                    <form class="mb-5" onsubmit="validarLogin(event)">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" id='email' placeholder="juandiaz@gmail.com" autocomplete="off" onblur="validarMail(this)">
@@ -48,7 +52,7 @@
                     </form>
 
                     <a href="olvide-mi-contrasena.html" class="card-link">Olvide mi Contraseña</a>
-                    <a href="#" class="card-link">Registrarme</a>
+                    <a href="registro.html" class="card-link">Registrarme</a>
                 </div>
             </div>
 

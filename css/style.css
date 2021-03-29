@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 
@@ -13,6 +13,21 @@ header .navbar {
 header .navbar-brand img {
     max-width: 92px;
     width: 100%;
+}
+
+
+/* Navbar Right*/
+
+.btn-admin,
+.btn-logout,
+.is-admin .btn-login,
+.is-admin .btn-reg {
+    display: none;
+}
+
+.is-admin .btn-logout,
+.is-admin .btn-admin {
+    display: inline-block;
 }
 
 
@@ -37,18 +52,16 @@ footer a:hover {
 }
 
 
-/* Fondo Admn */
-
-.fondoAdm {
-    background-color: white;
-}
-
-
 /* fondo body login*/
 
 .login {
     background-image: url(../img/fondologin.jpg);
     margin-top: 0px;
+}
+
+.login .logo {
+    padding-top: 20px;
+    margin-bottom: 30px;
 }
 
 .overlay {
@@ -184,13 +197,6 @@ footer a:hover {
 }
 
 
-/* Pagina de admin */
-
-.fondoAdm {
-    background-color: white;
-}
-
-
 /* Pagina de Pelicula */
 
 .fondoPelicula {
@@ -214,43 +220,34 @@ footer a:hover {
     #slider1 h2 {
         font-size: 1.5rem;
     }
-
     #slider2 h2 {
         font-size: 1.3rem;
     }
-
     #slider1 p {
         display: none;
     }
     #slider1 a {
         font-size: 10px;
     }
-
     #slider2 a {
         font-size: 9.5px;
     }
-
     .textoResponsive {
         font-size: small;
     }
     .selectSm {
         width: 90%;
     }
-
     #slider2 p {
         display: none;
     }
 }
 
- @media (max-width: 1024px) {
-    
+@media (max-width: 1024px) {
     #slider1 p {
         display: none;
     }
-
     #slider2 p {
         display: none;
     }
-} 
-
- 
+}

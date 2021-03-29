@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Rollflix - Registro</title>
+    <title> Registro</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -19,6 +20,37 @@
 </head>
 
 <body class="parallax">
+    <header class="py-0 fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Rollflix">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutUs.html">Nosotros</a>
+                        </li>
+                    </ul>
+                    <div id="navRight" class="d-flex">
+                        <a class="btn btn-outline-danger btn-sm btn-login" href="login.html">Login</a>
+                        <a class="btn btn-outline-danger btn-sm btn-admin" href="admin.html">Administracion</a>
+                        <a class="btn btn-outline-danger btn-sm btn-reg" href="registro.html">Registrarme</a>
+                        <a class="btn btn-outline-danger btn-sm btn-logout" href="index.html">Cerrar Sesion</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main class="container d-flex justify-content-center">
         <section>
             <div class="logo text-center py-5">
@@ -115,6 +147,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/validacionesRegistro.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
