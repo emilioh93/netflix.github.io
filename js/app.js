@@ -1,3 +1,19 @@
+// localStorage.setItem("session", "");
+let session = localStorage.getItem("session");
+if (session === "admin") {
+    document.getElementById('navRight').className = 'd-flex is-admin';
+} else {
+    document.getElementById('navRight').className = 'd-flex';
+}
+
+document.querySelector('.btn-logout').addEventListener("click", function(e) {
+    e.preventDefault();
+    localStorage.setItem("session", "");
+    location.href = 'index.html'
+
+});
+
+
 function campoRequerido(clave) {
     if (clave.value.trim() === "") {
         clave.className = 'form-control is-invalid';
@@ -22,18 +38,30 @@ function validarMail(email) {
 
 function validarLogin(event) {
     event.preventDefault();
-    if (validarMail(document.getElementById('email')) == true && campoRequerido(document.getElementById('clave'))) {
-        if (document.getElementById('email').value == "admin@rollflix.com" && document.getElementById('clave').value == "admin") {
+    if (validarMail(document.getElementById('email')) === true && campoRequerido(document.getElementById('clave'))) {
+        if (document.getElementById('email').value === "admin@rollflix.com" && document.getElementById('clave').value === "admin") {
 
-            // window.location.href = "http://netflix.github.io/admin.html"
+            localStorage.setItem("session", "admin");
+
+
             location.href = 'admin.html'
-            
+
         } else {
-            alert("Usuario no valido")
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No podemos encontrar una cuenta con esta dirección de email.'
+            })
         }
 
     } else {
-        alert("Campos Incorrectos")
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes completar los campos correctamente.'
+        })
     }
 
 }

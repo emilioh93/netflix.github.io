@@ -16,6 +16,21 @@ header .navbar-brand img {
 }
 
 
+/* Navbar Right*/
+
+.btn-admin,
+.btn-logout,
+.is-admin .btn-login,
+.is-admin .btn-reg {
+    display: none;
+}
+
+.is-admin .btn-logout,
+.is-admin .btn-admin {
+    display: inline-block;
+}
+
+
 /* header login*/
 
 header .logo img {
@@ -34,13 +49,6 @@ footer a:hover {
 .logofooter img {
     max-width: 92px;
     width: 100%;
-}
-
-
-/* Fondo Admn */
-
-.fondoAdm {
-    background-color: white;
 }
 
 
@@ -189,13 +197,6 @@ footer a:hover {
 }
 
 
-/* Pagina de admin */
-
-.fondoAdm {
-    background-color: white;
-}
-
-
 /* Pagina de Pelicula */
 
 .fondoPelicula {
@@ -219,43 +220,34 @@ footer a:hover {
     #slider1 h2 {
         font-size: 1.5rem;
     }
-
     #slider2 h2 {
         font-size: 1.3rem;
     }
-
     #slider1 p {
         display: none;
     }
     #slider1 a {
         font-size: 10px;
     }
-
     #slider2 a {
         font-size: 9.5px;
     }
-
     .textoResponsive {
         font-size: small;
     }
     .selectSm {
         width: 90%;
     }
-
     #slider2 p {
         display: none;
     }
 }
 
- @media (max-width: 1024px) {
-    
+@media (max-width: 1024px) {
     #slider1 p {
         display: none;
     }
-
     #slider2 p {
         display: none;
     }
-} 
-
- 
+}
