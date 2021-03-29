@@ -7,7 +7,7 @@ body {
 /* Estilos navbar y footer */
 
 header .navbar {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 10%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.972) 10%, rgb(0, 0, 0));
 }
 
 header .navbar-brand img {
@@ -192,7 +192,7 @@ footer a:hover {
 .transparente {
     opacity: 0.9;
     -moz-opacity: 0.8;
-   filter: alpha(opacity=80);
+    filter: alpha(opacity=80);
     -khtml-opacity: 0.8;
 }
 

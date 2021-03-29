@@ -1,25 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/aboutUs.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&family=Bungee+Outline&family=Domine:wght@500&family=Jolly+Lodger&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title> Nosotros</title>
+    <title>Nosotros</title>
 </head>
 
 <body>
-    <section class="py-0 fixed-top">
+    <section class="fixed-top">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="img/logo.png" alt="Rollflix">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +29,10 @@
                             <a class="nav-link " href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="">Contacto</a>
+                            <a class="nav-link " href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="aboutUs.html">Nosotros</a>
                         </li>
                     </ul>
                     <div id="navRight" class="d-flex">
@@ -46,7 +47,7 @@
     </section>
     <header>
         <h1> rollflix </h1>
-        <p> About us </p>
+        <p> Sobre Nosotros </p>
     </header>
     <main>
         <p>Rollflix, Inc. es una empresa de entretenimiento y un servicio por suscripción estadounidense que opera a nivel mundial y cuyo servicio principal es la distribución de contenidos audiovisuales a través de una plataforma en línea o servicio de
@@ -153,56 +154,43 @@
                         maiores.
                     </p>
                 </div>
-
             </div>
-
         </div>
     </section>
-    <footer>
-        <footer class="text-secondary py-5 text-center">
-            <section class="container ">
-                <article class="row flex-md-row-reverse">
-                    <div class="col-sm-12 col-lg-4 mb-4">
-                        <a href="https://www.facebook.com/" class="mx-2"> <i class="fab fa-facebook-square fa-2x "></i></a>
-                        <a href="https://twitter.com/login?lang=es" class="mx-2"><i class="fab fa-twitter fa-2x "></i></a>
-                        <a href="https://www.instagram.com/?hl=es-la" class="mx-2"><i class="fab fa-instagram fa-2x "></i></a>
-                        <a href="https://www.youtube.com//?hl=es-la" class="mx-2"><i class="fab fa-youtube fa-2x "></i></a>
-                    </div>
-                    <div class="col-sm-12 col-lg-4 mb-4">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="contacto.html" class="nav-link">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="admin.html" class="nav-link">Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pagina404.html" class="nav-link">Error</a>
-                            </li>
-                        </ul>
-                    </div>
+    <footer class="text-secondary py-5 text-center">
+        <section class="container ">
+            <article class="row flex-md-row-reverse">
+                <div class="col-sm-12 col-lg-4 mb-4">
+                    <a href="./pagina404.html" class="mx-2"> <i class="fab fa-facebook-square fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-twitter fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-instagram fa-2x "></i></a>
+                    <a href="./pagina404.html" class="mx-2"><i class="fab fa-youtube fa-2x "></i></a>
+                </div>
+                <div class="col-sm-12 col-lg-4 mb-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="contacto.html" class="nav-link">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admin.html" class="nav-link">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pagina404.html" class="nav-link">Error</a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="col-sm-12  col-lg-4 mb-4 ">
-                        <div class="logofooter mb-3">
-                            <img src="img/logo.png" alt="Rollflix">
-                        </div>
-                        <p> <small>&copy; 2021 Todos los derechos reservados</small> </p>
+                <div class="col-sm-12  col-lg-4 mb-4 ">
+                    <div class="logofooter mb-3">
+                        <img src="img/logo.png" alt="Rollflix">
                     </div>
-                </article>
-            </section>
-        </footer>
+                    <p> <small>&copy; 2021 Todos los derechos reservados</small> </p>
+                </div>
+            </article>
+        </section>
     </footer>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
 </body>
 
 </html>
