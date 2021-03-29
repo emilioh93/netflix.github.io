@@ -70,23 +70,31 @@ function validarPaquetes(paquetes) {
     }
 }
 
-let pagos = document.getElementById('pago');
+let pagos = document.getElementById('pagos');
 
 function validarPagos(pagos) {
     if (pagos.value == 0 ||
         pagos.value == "") {
-        pago.className = "form-control is-invalid";
+        pagos.className = "form-control is-invalid";
         return false;
+    } else {
+        pagos.className = "form-control is-valid";
+        return true;
     }
 }
 
 function validarGeneral(event) {
     event.preventDefault();
     console.log("desde validar gral");
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 90 ~ validarPagos ~ validarPagos", validarPagos(document.getElementById("pagos")))
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 90 ~ validarGeneral ~ validarTelefono", validarTelefono(document.getElementById("telefono")))
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 90 ~ validarGeneral ~ validarEmail", validarEmail(document.getElementById("email")))
+    console.log("🚀 ~ file: validacionesRegistro.js ~ line 90 ~ validarGeneral ~ validarNombre", validarNombre(document.getElementById("nombre")))
     if (validarNombre(document.getElementById("nombre")) &&
         validarEmail(document.getElementById("email")) &&
         validarTelefono(document.getElementById("telefono")) &&
-        validarPagos(document.getElementById("pago"))) {
+        validarPagos(document.getElementById("pagos"))) {
+
 
         enviarEmail();
 
@@ -119,7 +127,7 @@ function enviarEmail() {
         from_email: document.getElementById("email").value,
         from_contrasenia: document.getElementById("contrasenia").value,
         from_paquetes: paquetes,
-        from_pago: document.getElementById("pago").value,
+        from_pago: document.getElementById("pagos").value,
     }).then(function(response) {
         console.log(response);
         Swal.fire(
