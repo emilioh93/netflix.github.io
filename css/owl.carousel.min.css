@@ -222,13 +222,11 @@
 }
 
 .item .info {
-    margin: auto;
     color: #fff;
     text-align: center;
-    line-height: 200px;
     /* igual height de la imagen */
     background: #000;
-    transition: opacity .4s linear;
+    transition: opacity .8s linear;
     cursor: pointer;
     position: absolute;
     top: 0;
