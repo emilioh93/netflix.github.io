@@ -140,3 +140,27 @@ footer a {
 footer a:hover {
     color: #fff;
 }
+
+.navbar {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 10%, rgba(0, 0, 0, 0));
+}
+
+ .navbar-brand img {
+  max-width: 70px;
+  width: 100%;
+}
+
+
+/* Navbar Right*/
+
+.btn-admin,
+.btn-logout,
+.is-admin .btn-login,
+.is-admin .btn-reg {
+  display: none;
+}
+
+.is-admin .btn-logout,
+.is-admin .btn-admin {
+  display: inline-block;
+}
