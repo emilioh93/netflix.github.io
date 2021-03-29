@@ -120,13 +120,18 @@ html {
   
 #equipo{
     background-color: hsl(60, 10%, 10%);
-    padding: 27px;
+    padding: 32px;
 }  
 
 #tituloAU{
     background-color: hsl(60, 10%, 10%) ;
-    padding: 23px;
+    padding: 30px;
     
+}
+
+#equipo h3 {
+  margin-top: 20px;
+  line-height: 2;
 }
 
 footer {
