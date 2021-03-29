@@ -135,7 +135,7 @@ function validarGeneral() {
 //Creo areglo vacio para ingresar peliculas
 
 
-let listaPeliculas = [];
+const listaPeliculas = [];
 
 //Modal arreglo
 const modalProducto = new bootstrap.Modal(
