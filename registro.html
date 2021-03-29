@@ -53,11 +53,13 @@
     </header>
     <main class="container d-flex justify-content-center">
         <section>
+            <div>
+                <a href="./index.html" class="btn btn-lg btn-outline-danger">Volver al inicio</a>
+            </div>
             <div class="logo text-center py-5">
                 <img src="img/logo.png" alt="Rollflix">
             </div>
             <h4 class="card-title mb-5 text-center">¡Unos pasos más y listo! Tampoco nos gustan los trámites.</h4>
-            <!-- FIXME: Al hacer Tab, salta el error en todos los campos -->
             <form class="mb-5" onsubmit="validarGeneral(event)" id="formRegistro">
                 <!-- Nombre -->
                 <input type="text" class="form-control mb-3 inputRegistro" name="nombre" id="nombre" placeholder="Nombre y Apellido" onblur="validarNombre(this)">
@@ -128,14 +130,13 @@
                     <p>Tu membresía comienza en cuanto configures el pago.</p>
                     <p><strong>Sin compromisos. Cancelá online cuando quieras.</strong></p>
                     <div class="d-flex justify-content-center">
-                        <select class="form-select selectSm" name="pago" id="pago" onblur="validarPagos(this)">
+                        <select class="form-select selectSm" name="pagos" id="pagos" onblur="validarPagos(this)">
                             <option value="" selected>Seleccioná un método de pago</option>
                             <option value="credito">Tarjeta de crédito</option>
                             <option value="debito">Tarjeta de débito</option>
                             <option value="transferencia">Transferencia</option>
                             <option value="deposito">Depósito</option>
                         </select>
-                        <!-- FIXME: no aparece el invalid feedback de forma de pago -->
                         <div class="invalid-feedback">Debe elegir una opción de pago para continuar</div>
                     </div>
                 </div>
