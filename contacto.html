@@ -52,20 +52,20 @@
                         <h5 class="card-title ">Formulario de Contacto</h5>
                     </div>
                     <div class="card-body">
-                        <form action="" class="">
+                        <form onsubmit="validarGeneral(event)" action="" class="">
                             <div class="mb-3">
                                 <label class="form-label text-light">Nombre y Apellido</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" />
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" onblur="campoRequerido(this)"/>
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label text-light">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail..." />
+                                <input type="email" class="form-control" id="email" placeholder="JuanPerez@gmail..." onblur="validarEmail(this)"/>
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label text-light">Consulta</label>
-                                <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta"></textarea>
+                                <textarea name="" id="Consulta" class="form-control" placeholder="Ingrese su consulta" onblur="validarConsulta(this)"></textarea>
                                 <div class="invalid-feedback">Campo invalido</div>
                             </div>
                             <div class="mb-3">
