@@ -1,6 +1,13 @@
 //Creacion clase para pelicula
 class Peli {
-  constructor(codigo, nombre, categoria, descripcionPelicula, imagen, publicado) {
+  constructor(
+    codigo,
+    nombre,
+    categoria,
+    descripcionPelicula,
+    imagen,
+    publicado
+  ) {
     this.codigo = codigo;
     this.nombre = nombre;
     this.categoria = categoria;
@@ -127,25 +134,27 @@ function validarGeneral() {
 
 //Creo areglo vacio para ingresar peliculas
 
-listaPeliculas = [];
+
+let listaPeliculas = [];
 
 //Modal arreglo
-const modalProducto = new bootstrap.Modal(document.getElementById('modalPelicula'));
+const modalProducto = new bootstrap.Modal(
+  document.getElementById("modalPelicula")
+);
 
 //limpiar formulario
 
-
-
 modalProducto.hide();
-let btnAgregar = document.getElementById('btnAgregar')
-btnAgregar.addEventListener('click', function(){
+
+let btnAgregar = document.getElementById("btnAgregar");
+btnAgregar.addEventListener("click", function () {
   limpiarFormulario();
   modalProducto.show();
-})
+});
 
 //variable bandera unirversal
 
-let modificarPelicula = false
+let modificarPelicula = false;
 
 //llamo a la funcion leer datos para tener actualizada la tabla
 
@@ -180,120 +189,112 @@ function agregarPeli() {
 
     leerDatos();
 
-    Swal.fire('Se agrego la Pelicula!!!');
+    Swal.fire("Se agrego la Pelicula!!!");
 
     limpiarFormulario();
 
     modalProducto.hide();
-
-  
   }
 }
 
 //funcion preparar pelicula
 
-function prepararPeli(boton){
-  console.log(boton.id)
+function prepararPeli(boton) {
+  console.log(boton.id);
 
-  let peliEncontrada = listaPeliculas.find((producto) => {return producto.codigo === boton.id})
-  console.log(peliEncontrada)
+  let peliEncontrada = listaPeliculas.find((producto) => {
+    return producto.codigo === boton.id;
+  });
+  console.log(peliEncontrada);
 
-  document.getElementById('codigo').value = peliEncontrada.codigo;
-  document.getElementById('nombre').value = peliEncontrada.nombre;
-  document.getElementById('categoria').value = peliEncontrada.categoria;
-  document.getElementById('descripcionPelicula').value = peliEncontrada.descripcionPelicula;
-  document.getElementById('imagen').value = peliEncontrada.imagen;
+  document.getElementById("codigo").value = peliEncontrada.codigo;
+  document.getElementById("nombre").value = peliEncontrada.nombre;
+  document.getElementById("categoria").value = peliEncontrada.categoria;
+  document.getElementById("descripcionPelicula").value =
+    peliEncontrada.descripcionPelicula;
+  document.getElementById("imagen").value = peliEncontrada.imagen;
 
   //cambiar el estado de mi variable modificar Pelicula
-  modificarPelicula=true;
+  modificarPelicula = true;
 
   modalProducto.show();
 }
 
 //Funcion para  modificar Pelicula
 
-function modificarPeli(){
-
+function modificarPeli() {
   //tomar los valores modificados del formulario
-  let codigo = document.getElementById('codigo').value;
-  let nombre = document.getElementById('nombre').value;
-  let categoria = document.getElementById('categoria').value;
-  let descripcionPelicula = document.getElementById('descripcionPelicula').value;
-  let imagen = document.getElementById('imagen').value;
+  let codigo = document.getElementById("codigo").value;
+  let nombre = document.getElementById("nombre").value;
+  let categoria = document.getElementById("categoria").value;
+  let descripcionPelicula = document.getElementById("descripcionPelicula")
+    .value;
+  let imagen = document.getElementById("imagen").value;
 
   //buscar el objeto y modificar la Pelicula
 
-   for(let i in listaPeliculas){
-     
-     if (listaPeliculas[i].codigo === codigo) {
-       listaPeliculas[i].nombre = nombre;
-       listaPeliculas[i].categoria = categoria;
-       listaPeliculas[i].descripcionPelicula = descripcionPelicula;
-       listaPeliculas[i].imagen = imagen;
-     }
-   }
-   
-   //actualizo el local storage
-   localStorage.setItem('listaPelisKey', JSON.stringify(listaPeliculas));
+  for (let i in listaPeliculas) {
+    if (listaPeliculas[i].codigo === codigo) {
+      listaPeliculas[i].nombre = nombre;
+      listaPeliculas[i].categoria = categoria;
+      listaPeliculas[i].descripcionPelicula = descripcionPelicula;
+      listaPeliculas[i].imagen = imagen;
+    }
+  }
 
-   Swal.fire(
+  //actualizo el local storage
+  localStorage.setItem("listaPelisKey", JSON.stringify(listaPeliculas));
+
+  Swal.fire(
     "Pelicula modificada",
     "La pelicula seleccionada se modifico correctamente!",
     "success"
   );
 
   leerDatos();
-  
+
   limpiarFormulario();
-  
+
   modalProducto.hide();
-  
-
 }
-
 
 //funcion para eliminar pelicula
 
-function eliminarPeli(boton){
+function eliminarPeli(boton) {
+  console.log(boton.id);
 
-console.log(boton.id)
+  Swal.fire({
+    title: "Estas seguro de eliminar la Pelicula",
+    text: "No puedes volver atras luego de eliminar una Pelicula",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, borrala",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let peliculaFiltrada = listaPeliculas.filter(
+        (producto) => producto.codigo != boton.id
+      );
+      console.log(peliculaFiltrada);
 
-Swal.fire({
-  title: 'Estas seguro de eliminar la Pelicula',
-  text: "No puedes volver atras luego de eliminar una Pelicula",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si, borrala',
-  cancelButtonText: 'Cancelar',
-}).then((result) => {
-  if (result.isConfirmed) {
-    let peliculaFiltrada = listaPeliculas.filter((producto) => producto.codigo != boton.id);
-    console.log(peliculaFiltrada)
+      listaPeliculas = peliculaFiltrada;
 
+      //guardar los datos en local storage
 
-    listaPeliculas = peliculaFiltrada;
-    
+      localStorage.setItem("listaPelisKey", JSON.stringify(listaPeliculas));
 
-    //guardar los datos en local storage
+      leerDatos();
 
-    localStorage.setItem('listaPelisKey',JSON.stringify(listaPeliculas));
-
-    leerDatos();
-    
-
-    Swal.fire(
-      'Borrado!',
-      'La pelicula seleccionada fue eliminada.',
-      'success'
-    )
-  }
-})
-
+      Swal.fire(
+        "Borrado!",
+        "La pelicula seleccionada fue eliminada.",
+        "success"
+      );
+    }
+  });
 }
-
-
 
 // funcion guardar pelicula
 
@@ -301,21 +302,18 @@ function guardarPeli(event) {
   event.preventDefault();
   console.log("desde guardar Peli");
   if (modificarPelicula === true) {
-    console.log('desde modificar pelicula')
+    console.log("desde modificar pelicula");
     modificarPeli();
-
   } else {
-    console.log('desde agregar pelicula')
-    agregarPeli()
-    
+    console.log("desde agregar pelicula");
+    agregarPeli();
   }
 }
 
 //limpiar formulario
 function limpiarFormulario() {
   document.getElementById("formPeli").reset();
-  modificarPelicula = false
-
+  modificarPelicula = false;
 }
 
 //funcion para leer datos
